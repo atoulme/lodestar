@@ -81,7 +81,7 @@ export function getGenesisBeaconState(
     // Finality
     previousEpochAttestations: [],
     currentEpochAttestations: [],
-    previousJustifiedEpoch: GENESIS_EPOCH - 1,
+    previousJustifiedEpoch: GENESIS_EPOCH,
     currentJustifiedEpoch: GENESIS_EPOCH,
     previousJustifiedRoot: ZERO_HASH,
     currentJustifiedRoot: ZERO_HASH,

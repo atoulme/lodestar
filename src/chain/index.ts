@@ -5,6 +5,7 @@
 import assert from "assert";
 import {EventEmitter} from "events";
 import {hashTreeRoot} from "@chainsafe/ssz";
+import fs from "fs";
 
 import {BeaconBlock, BeaconState, Deposit, Eth1Data, number64} from "../types";
 import {GENESIS_SLOT, SECONDS_PER_SLOT} from "../constants";
@@ -67,6 +68,7 @@ export class BeaconChain extends EventEmitter {
     logger.info('Initializing beacon chain...');
     const genesisState = getGenesisBeaconState(genesisDeposits, genesisTime, genesisEth1Data);
     const genesisBlock = getEmptyBlock();
+
     genesisBlock.stateRoot = hashTreeRoot(genesisState, BeaconState);
     this.genesisTime = genesisTime;
     await this.db.setBlock(genesisBlock);

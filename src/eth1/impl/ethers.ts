@@ -202,6 +202,7 @@ export class EthersEth1Notifier extends EventEmitter implements Eth1Notifier {
   private createDeposit(dataHex: string, indexHex: string): Deposit {
     const dataBuf = Buffer.from(dataHex.substr(2), 'hex');
     const index = Buffer.from(indexHex.substr(2), 'hex').readUIntLE(0, 6);
+    console.log("deposit", dataBuf);
     const data: DepositData = deserialize(dataBuf, DepositData);
     return  {
       index: index,

@@ -14,6 +14,7 @@ import * as RPCApis from "../../rpc/api";
 import deepmerge from "deepmerge";
 import {getTomlConfig, IConfigFile} from "../../util/toml";
 import defaults from "../../node/defaults";
+import * as C from "../../constants";
 
 interface IBeaconCommandOptions {
   db: string;
